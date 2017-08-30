@@ -1,0 +1,15 @@
+<h1>{{title}}</h1>
+<form [formGroup]="formGroup">
+  First name:
+  <br><input type="text" formControlName="firstName" [(ngModel)]="firstName">
+  <control-messages [control]="formGroup.controls.firstName"></control-messages>
+  <br>Last name:
+  <br><input type="text" formControlName="lastName"  [(ngModel)]="lastName">
+  <control-messages [control]="formGroup.controls.lastName"></control-messages>
+  <br>
+
+  <br>
+  <input type="submit" value="Submit" [disabled]="!formGroup.valid">
+  <br><i>button will disable until form is valid</i>
+  <br>Form Valid Status : {{formGroup.valid}}
+</form>
